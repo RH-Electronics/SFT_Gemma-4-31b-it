@@ -27,8 +27,8 @@ watch -n 1 nvidia-smi
 ```
 
 ### Open Unsloth Studio
-Select unsloth/gemma-4-31B-it model, upload your dataset.jsonl
-Apply SFT setting from the attached yaml or insert settings manually:
+Select **unsloth/gemma-4-31B-it** model, upload your dataset.jsonl
+Apply SFT setting from the attached yaml or insert settings manually (my comments in (...)):
 
 ```python
   max_seq_length: 2048 (or according to your dataset plan, VRAM limitation)
