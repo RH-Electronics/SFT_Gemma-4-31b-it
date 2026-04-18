@@ -65,7 +65,8 @@ lora:
 ```
 
 ### Evaluating SFT statistics:
-**Training Loss**: the graph should decrease its values down to 1.1-1.4  Final value below 1.0 - model overfit, it becomes dataset parroting. Final value above 2.5 may tell that model is still not learned well dataset style.
+**Training Loss**: the graph should decrease its values down to 1.1-1.4  Final value below 1.0 - model overfit, it becomes dataset parroting -> reduce learning steps. Final value above 2.5 may tell that model is still not learned well dataset style -> add learning steps.
+If you don't want to add learning steps, try to experimenting with lora_r value
 
 **Gradient Norm**: better if the graph is stable flat or has slow decreasing. Sometimes with batch_size=1 you can see gradient explosure peaks, but if it returns to stable flat graph at the next evaluation step then it acceptable. If you see chaotic jumps it tells model is not stable.
 
