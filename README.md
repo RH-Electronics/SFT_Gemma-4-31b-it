@@ -65,9 +65,11 @@ lora:
 ```
 
 ### Evaluating SFT statistics:
-Training Loss: the graph should decrease its values down to 1.1-1.4  Final value below 1.0 - model overfit, it becomes dataset parroting. Final value above 2.5 may tell that model is still not learned well dataset style.
+**Training Loss**: the graph should decrease its values down to 1.1-1.4  Final value below 1.0 - model overfit, it becomes dataset parroting. Final value above 2.5 may tell that model is still not learned well dataset style.
 
-Gradient Norm: better if the graph is stable flat or has slow decreasing. Sometimes with batch_size=1 you can see gradient explosure peaks, but if it returns to stable flat graph at the next evaluation step then it acceptable. If you see chaotic jumps it tells model is not stable.
+**Gradient Norm**: better if the graph is stable flat or has slow decreasing. Sometimes with batch_size=1 you can see gradient explosure peaks, but if it returns to stable flat graph at the next evaluation step then it acceptable. If you see chaotic jumps it tells model is not stable.
+
+<img width="1590" height="1210" alt="Screenshot from 2026-04-18 15-28-07" src="https://github.com/user-attachments/assets/af0bb74d-7fd4-41e3-97d0-762392b75ff0" />
 
 ### Exporting
 Make frist chat test inside the unsloth studio chat. For Gemma-4 you can try:
