@@ -10,7 +10,7 @@ Local SFT
 - PyCharm for editing python scripts (not mandatory)
 
 ### Setting GPU power limit
-Unless you have a liquid cooled GPU, I suggest to set 70%-80% GPU power limit. It result in less speed for SFT, but keep your GPU in safe zone.
+Unless you have a liquid cooled GPU, I suggest to set 70%-80% GPU power limit. It results in slower speed for SFT, but keeps your GPU in safe zone.
 
 Open Terminal:
 ```python
