@@ -30,6 +30,7 @@ watch -n 1 nvidia-smi
 Select unsloth/gemma-4-31B-it model, upload your dataset.jsonl
 Apply SFT setting from the attached yaml or insert settings manually:
 
+```python
   max_seq_length: 2048 (or according to your dataset plan, VRAM limitation)
   num_epochs: 3 (depend on dataset size, if you have 10K pairs with homogeneous style then maybe 1-2 epoch maybe enough)
   learning_rate: 0.0001 (trial and error method to find optimal for your dataset, start with 0.0001)
@@ -61,6 +62,7 @@ lora:
     - down_proj
   use_rslora: true
   finetune_vision_layers: false (do not train visual layers, set to false manually in yaml)
+```
 
 ### Evaluating SFT statistics:
 Training Loss: the graph should decrease its values down to 1.1-1.4  Final value below 1.0 - model overfit, it becomes dataset parroting. Final value above 2.5 may tell that model is still not learned well dataset style.
@@ -69,12 +71,14 @@ Gradient Norm: better if the graph is stable flat or has slow decreasing. Someti
 
 ### Exporting
 Make frist chat test inside the unsloth studio chat. For Gemma-4 you can try:
+```python
 Temperature = 0.8 - 1.0
 Top_P = 0.95
 Top_K = 64
 Min_P = 0.05
 Rep.Penalty = 1.15
 Presense Penalty = 0.3
+```
 
 If everything is fine open Export tab:
 - Merge Model weights
